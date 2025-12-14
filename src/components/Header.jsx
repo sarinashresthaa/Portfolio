@@ -61,7 +61,10 @@ const Header = () => {
                 href={item.link}
                 className={`${
                   activeLink === item.link ? "text-lime-900 font-semibold" : ""
-                } hover:text-lime-900`}>
+                } hover:text-lime-900`}
+                onClick={() => {
+                setOpen(false);
+              }}>
                 {item.name}
               </a>
             ))}
