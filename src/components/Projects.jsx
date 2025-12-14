@@ -13,15 +13,15 @@ const projects = [
     title: "Portfolio Website",
     description: "My personal portfolio built using React and Tailwind CSS, showcasing my skills and projects.",
     tech: ["React", "Tailwind CSS"],
-    github: "https://github.com/yourusername/portfolio",
+    github: "https://github.com/sarinashresthaa/Portfolio",
     demo: "https://sarina-portfolio.vercel.app",
   },
   {
     title: " Todo List",
     description: "A simple and interactive Todo List app built with React and Tailwind CSS to manage tasks efficiently.",
     tech: ["React", "Tailwind CSS"],
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://sarina-portfolio.vercel.app",
+    github: "https://github.com/sarinashresthaa/Todo-List",
+    demo: "https://sarina-todo.netlify.app/",
   }
 ];
 
