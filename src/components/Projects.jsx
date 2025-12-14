@@ -14,7 +14,7 @@ const projects = [
     description: "My personal portfolio built using React and Tailwind CSS, showcasing my skills and projects.",
     tech: ["React", "Tailwind CSS"],
     github: "https://github.com/sarinashresthaa/Portfolio",
-    demo: "https://sarina-portfolio.vercel.app",
+    demo: "https://sarinashrestha-portfolio.netlify.app/",
   },
   {
     title: " Todo List",
