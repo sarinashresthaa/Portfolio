@@ -22,6 +22,13 @@ const projects = [
     tech: ["React", "Tailwind CSS"],
     github: "https://github.com/sarinashresthaa/Todo-List",
     demo: "https://sarina-todo.netlify.app/",
+  },
+  {
+    title: " Task Tracker",
+    description: "A clean and responsive task tracker app built with React and Typescript, powered by React Query for smooth CRUD performance.",
+    tech: ["React", "Tailwind CSS", "Typescript", "React Query"],
+    github: "https://github.com/sarinashresthaa/tasktracker",
+    demo: "https://tasktrackerbysarina.netlify.app/",
   }
 ];
 

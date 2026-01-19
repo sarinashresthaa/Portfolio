@@ -33,7 +33,7 @@ const Header = () => {
             href={item.link}
             className={`${
               activeLink === item.link ? "text-lime-600 font-semibold" : ""
-            } hover:text-lime-600`}>
+            } hover:text-lime-600 `}>
             {item.name}
           </a>
         ))}
