@@ -137,7 +137,7 @@ const Contact = () => {
           <FaLinkedin />
         </a>
         <a
-          href="https://www.tiktok.com/@yourusername"
+          href="https://www.tiktok.com/@sarryyy___"
           target="_blank"
           rel="noopener noreferrer"
           className="text-black transition hover:text-gray-800"
