@@ -19,20 +19,20 @@ const About = () => {
           and engaging web applications.
         </p>
 
-        {/* <div className="flex flex-col sm:flex-row justify-between border-t border-gray-200 pt-6 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row justify-between border-t border-gray-200 pt-6 text-center sm:text-left">
           <div className="flex-1 mb-4 sm:mb-0">
-            <h3 className="text-3xl font-bold text-lime-700">2+</h3>
-            <p className="text-gray-600 text-sm">Years of experience</p>
+            <h3 className="text-3xl font-bold text-lime-700">6+</h3>
+            <p className="text-gray-600 text-sm">Months of experience</p>
           </div>
           <div className="flex-1 mb-4 sm:mb-0">
-            <h3 className="text-3xl font-bold text-lime-700">20+</h3>
+            <h3 className="text-3xl font-bold text-lime-700">5+</h3>
             <p className="text-gray-600 text-sm">Completed projects</p>
           </div>
-          <div className="flex-1">
+          {/* <div className="flex-1">
             <h3 className="text-3xl font-bold text-lime-700">10+</h3>
             <p className="text-gray-600 text-sm">Clients worldwide</p>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
     </div>
   );
