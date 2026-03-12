@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { IoCloseOutline, IoReorderThreeOutline } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 
 const Header = () => {
@@ -44,17 +45,18 @@ const Header = () => {
           </button>
         </a>
       </div>
-      <div className="lg:hidden">
-        <MdMenu
-          size={24}
-          onClick={() => {
-            setOpen(!open);
-          }}
-          className="cursor-pointer"
-        />
+       <button
+          className="lg:hidden hover:bg-lime-100 rounded"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? (
+            <IoCloseOutline size={32} />
+          ) : (
+            <IoReorderThreeOutline size={32} />
+          )}
+        </button>
         {open && (
           <div className="w-full  absolute left-0 top-14 transition-all ease-in-out flex flex-col gap-4 bg-white rounded-xl shadow-md p-4 font-semibold text-lg">
-            {" "}
             {menuItems.map((item, index) => (
               <a
                 key={index}
@@ -81,7 +83,6 @@ const Header = () => {
           </div>
         )}
       </div>
-    </div>
   );
 };
 
