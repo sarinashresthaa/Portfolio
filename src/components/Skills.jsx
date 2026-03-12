@@ -1,15 +1,16 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaFigma } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiExpress } from "react-icons/si";
+import { FaCss3Alt, FaFigma, FaGitAlt, FaHtml5, FaJs, FaReact } from "react-icons/fa";
+import { SiMongodb, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 const Skills = () => {
   const skills = [
     { name: "HTML", icon: <FaHtml5 className="text-orange-600" /> },
     { name: "CSS", icon: <FaCss3Alt className="text-blue-600" /> },
     { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-    { name: "React", icon: <FaReact className="text-sky-500" /> },   
+    { name: "React", icon: <FaReact className="text-sky-500" /> },  
+    { name: "TypeScript", icon: <SiTypescript className="text-[#007acc]" /> }, 
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
+    { name: "Shadcn UI", icon: <img src="/shadcn.png" alt="shadcn icon" className="w-10 h-10 rounded-full" /> },
     { name: "Git / GitHub", icon: <FaGitAlt className="text-red-600" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-700" /> },
     { name: "Figma", icon: <FaFigma className="text-purple-500" /> },

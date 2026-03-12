@@ -33,7 +33,7 @@ const projects = [
   {
     title: " Task Tracker",
     description: "A clean and responsive task tracker app built with React and Typescript, powered by React Query for smooth CRUD performance.",
-    tech: ["React", "Tailwind CSS", "Typescript", "React Query"],
+    tech: ["React", "Tailwind CSS", "Typescript", "React Query", "Shadcn UI"],
     github: "https://github.com/sarinashresthaa/tasktracker",
     demo: "https://tasktrackerbysarina.netlify.app/",
   }
