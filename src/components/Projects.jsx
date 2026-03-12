@@ -24,6 +24,13 @@ const projects = [
     demo: "https://sarina-todo.netlify.app/",
   },
   {
+    title: " MiniMart",
+    description: "A responsive e-commerce app built with React and Tailwind CSS, using Fake Store API and Context API for real-time cart updates.",
+    tech: ["React", "Tailwind CSS", "Typescript", "Shadcn UI", "Context API"],
+    github: "https://github.com/sarinashresthaa/MiniMart",
+    demo: "https://minimartbysarina.netlify.app/",
+  },
+  {
     title: " Task Tracker",
     description: "A clean and responsive task tracker app built with React and Typescript, powered by React Query for smooth CRUD performance.",
     tech: ["React", "Tailwind CSS", "Typescript", "React Query"],
