@@ -9,6 +9,13 @@ const projects = [
     github: "https://github.com/sarinashresthaa/TaskPilot-Full-Stack",
     demo: "https://sarina-taskpilot.netlify.app",
   },
+   {
+    title: "DokoMeal",
+    description: "A responsive e-commerce platform with product browsing, category filtering, search and cart functionality.",
+    tech: ["React", "Tailwind CSS", "Typescript", "React Hook Form", "Yup", "OpenStreetMap API"],
+    github: "https://github.com/sarinashresthaa",
+    demo: "https://dokomandu.com/"
+  },
   {
     title: "Portfolio Website",
     description: "My personal portfolio built using React and Tailwind CSS, showcasing my skills and projects.",
