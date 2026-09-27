@@ -39,7 +39,7 @@ const Header = () => {
           </a>
         ))}
 
-        <a href="/Sarina_CV.pdf" download="Sarina_Shrestha_CV.pdf">
+        <a href="/sarina-cv.pdf" download="Sarina_Shrestha_CV.pdf">
           <button className="bg-lime-500 text-white rounded-2xl px-4 py-1 cursor-pointer">
             Download CV
           </button>
@@ -71,7 +71,7 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="/Sarina_CV.pdf"
+              href="/sarina-cv.pdf"
               download="Sarina_Shrestha_CV.pdf"
               onClick={() => {
                 setOpen(false);
