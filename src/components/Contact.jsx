@@ -1,45 +1,50 @@
-import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";
-import { FaUser, FaEnvelope, FaCommentDots, FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaPhone } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaUser,
+  FaEnvelope,
+  FaCommentDots,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+} from "react-icons/fa";
 
 const Contact = () => {
-  const form = useRef();
-  const [status, setStatus] = useState(""); // For success/error messages
+  const [status, setStatus] = useState(""); // "", "sending", "success", "error"
 
- const sendEmail = (e) => {
-  e.preventDefault();
-  setStatus("sending");
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
 
-  emailjs
-    .sendForm(
-      "service_1pze6g2",
-      "template_1fn6v1q",
-      form.current,
-      "E2k4yDEKx24Zm13ak"
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        setStatus("success"); // show success message
-        e.target.reset();
-
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-          setStatus("");
-        }, 3000);
-      },
-      (error) => {
-        console.log(error.text);
-        setStatus("error"); // show error message
-
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-          setStatus("");
-        }, 3000);
-      }
+    const form = e.target;
+    const formData = new FormData(form);
+    formData.append(
+      "1b764032-851c-46a7-9bb7-499458a72ba1",
+      "YOUR_WEB3FORMS_ACCESS_KEY",
     );
-};
 
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        console.log(data.message);
+        setStatus("error");
+      }
+    } catch (error) {
+      console.log(error);
+      setStatus("error");
+    }
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => setStatus(""), 3000);
+  };
 
   return (
     <div
@@ -52,16 +57,31 @@ const Contact = () => {
       </div>
 
       <form
-        ref={form}
         onSubmit={sendEmail}
         className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 space-y-4"
       >
+        {/* Optional: custom email subject */}
+        <input
+          type="hidden"
+          name="subject"
+          value="New message from your portfolio"
+        />
+
+        {/* Honeypot spam protection (hidden from real users) */}
+        <input
+          type="checkbox"
+          name="botcheck"
+          className="hidden"
+          style={{ display: "none" }}
+        />
+
         <div className="relative">
           <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            name="user_name"
+            name="name"
             placeholder="Your Name"
+            required
             className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500"
           />
         </div>
@@ -70,8 +90,9 @@ const Contact = () => {
           <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
             type="email"
-            name="user_email"
+            name="email"
             placeholder="Your Email"
+            required
             className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500"
           />
         </div>
@@ -82,18 +103,19 @@ const Contact = () => {
             name="message"
             placeholder="Your Message"
             rows="4"
+            required
             className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 resize-none"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-lime-600 text-white py-2 rounded-lg hover:bg-lime-700 transition"
+          disabled={status === "sending"}
+          className="w-full bg-lime-600 text-white py-2 rounded-lg hover:bg-lime-700 transition disabled:opacity-60"
         >
-          Send Message
+          {status === "sending" ? "Sending..." : "Send Message"}
         </button>
 
-        {/* Inline notification */}
         {status === "success" && (
           <p className="text-green-600 font-semibold text-center mt-2">
             ✅ Message sent successfully!
